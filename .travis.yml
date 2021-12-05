@@ -10,11 +10,3 @@ script:
 
 after_success:
   - docker build -t excel61/multi-client ./client
-  - docker build -t excel61/multi-nginx ./nginx
-  - docker build -t excel61/multi-server ./server
-  - docker build -t excel61/multi-worker ./worker
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push excel61/multi-client
-  - docker push excel61/multi-nginx
-  - docker push excel61/multi-server
-  - docker push excel61/multi-multi-worker
