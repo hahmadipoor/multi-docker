@@ -3,10 +3,6 @@ sudo: required
 services:
   - docker
 
-before_install:
-  - docker build -t excel61/react-test -f ./client/Dockerfile.dev ./client
-script:
-  - docker run excel61/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t excel61/multi-client -f ./client/Dockerfile
+  - docker build -t excel61/multi-worker ./worker
